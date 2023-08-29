@@ -171,21 +171,26 @@ section .blogpost .blogpost-content {
 
  section .blogpost .blogpost-content h1 {
     font-size: 4rem;
+     margin-top: 1rem:
 } 
 section .blogpost .blogpost-content h2 {
     font-size: 3rem;
+     margin-top: 1rem:
 } 
 section .blogpost .blogpost-content h3 {
     font-size: 2rem;
+     margin-top: 1rem:
 } 
 section .blogpost .blogpost-content h4 {
     font-size: 1.5rem;
+     margin-top: 1rem:
 } 
 section .blogpost .blogpost-content a {
     color: var(--green);
 } 
 section .blogpost .blogpost-content p{
     font-size: 2rem;
+     margin-top: 0.6rem:
 }
 
 
