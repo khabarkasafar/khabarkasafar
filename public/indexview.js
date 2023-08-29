@@ -66,6 +66,14 @@ $(document).ready(function() {
           $(this).attr('title', title);
         });
       }
+        else if ($(window).width() <= 991) {
+           $('.truncate-title').each(function() {
+          var title = $(this).text();
+          var truncatedTitle = truncateText(title, 50); 
+          $(this).text(truncatedTitle);
+          $(this).attr('title', title);
+        });
+          
     }
     applyTruncation();
     $(window).resize(function() {
