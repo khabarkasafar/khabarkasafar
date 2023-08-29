@@ -160,35 +160,37 @@ $(document).ready(function () {
 
 $(document).ready(function() {
     function truncateText(text, maxLength) {
-      if (text.length > maxLength) {
-        return text.substring(0, maxLength - 3) + '....';
-      }
-      return text;
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength - 3) + '....';
+        }
+        return text;
     }
-  
+
     function applyTruncation() {
-      if ($(window).width() <= 768) {
+        var maxWidth = $(window).width();
         $('.truncate-title').each(function() {
-          var title = $(this).text();
-          var truncatedTitle = truncateText(title, 100); 
-          $(this).text(truncatedTitle);
-          $(this).attr('title', title);
+            var originalTitle = $(this).text(); // Store the original text
+            var truncatedTitle;
+
+            if (maxWidth <= 768) {
+                truncatedTitle = truncateText(originalTitle, 100);
+            } else if (maxWidth <= 991) {
+                truncatedTitle = truncateText(originalTitle, 50);
+            } else {
+                truncatedTitle = originalTitle;
+            }
+
+            $(this).text(truncatedTitle);
+            $(this).attr('title', originalTitle);
         });
-      }
-        else if ($(window).width() <= 991) {
-           $('.truncate-title').each(function() {
-          var title = $(this).text();
-          var truncatedTitle = truncateText(title, 50); 
-          $(this).text(truncatedTitle);
-          $(this).attr('title', title);
-        });
-          
     }
+
     applyTruncation();
+
     $(window).resize(function() {
-      applyTruncation();
+        applyTruncation();
     });
-  });
-  
+});
+
 
 
