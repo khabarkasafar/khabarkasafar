@@ -35,35 +35,15 @@ router.post("/articlepost", checkAuth, async (req, res) => {
     if (!user) {
       return res.status(404).send("User not found.");
     }
-    //const image = req.file ? req.file.path : null;
-    //const imageFile = req.files.image;
-    //const file = req.files.image;
     const file = req.files.image;
 
     const result = await cloudinary.uploader.upload(file.tempFilePath, {
       folder: "uploads",
     });
-
-    /* if (!req.files || !req.files.postimage) {              
-        return res.status(400).json({ error: "Image file is missing." });
-      }*/
-
-    /* cloudinary.uploader.upload(
-        imageFile.tempFilePath,
-        async (error, result) => {
-          if (error) {
-            console.error("Error uploading image to Cloudinary:", error);
-            return res.status(500).send("Error uploading image.");
-          }*/
-
     const postimage = result.secure_url;
-    //const data = await uploadToCloudinary(req.file.path, "articleimages");
-    // const articleContentWithLineBreaks = req.body.article.replace(
-    //   /\n/g,
-    //   "<br>"
-    // );
     const newArticle = new Article({
       title: req.body.title,
+      headingtitle: req.body.headingtitle,
       description: req.body.description,
       category: req.body.category,
       article: req.body.article,
