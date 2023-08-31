@@ -537,7 +537,8 @@ section .section-left .blog .blogcontaint {
     <section>
 
         <div class="section-left">
-            <h1>pending Blog</h1>
+            <h1>pending articles</h1>
+            {{#if pendingArticles.length}}
             {{#each pendingArticles}}
             <a href="/post/{{this.urlTitle}}">
                 <div class="blog">
@@ -569,6 +570,9 @@ section .section-left .blog .blogcontaint {
             </form>
 
             {{/each}}
+            {{else}}
+            <p>there are no pending articles right now</p>
+            {{/if}}
         </div>
 
     </section>
