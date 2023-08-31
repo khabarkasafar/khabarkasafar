@@ -7,6 +7,9 @@ const articleSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+   headingtitle: {
+    type: String,
+  },
   description: {
     type: String,
     required: false
