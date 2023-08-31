@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description"content="{{article.description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ article.title }}</title>
+    <title>{{ article.headingtitle }}</title>
     <link rel="stylesheet" href="blogview.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
@@ -22,7 +22,7 @@
          <span><img id="logo" src="logo5(1).png" alt=""></span>
          <nav class="navbar" id="navbar">
             {{#if username}}
-            <a href="/">home</a>
+            <a href="/home">home</a>
             <a href="#latest-blog">latest news</a>
             <a href="#featured-blog">featured news</a>
            
@@ -55,7 +55,7 @@
     <section>
         <div class="blogpost">
             <div class="blogpost-title">
-                <h1>{{ article.title }}</h1>
+                <h1>{{ article.headingtitle }}</h1>
             </div>
              <div class="blogpost-description">
                 <h1>{{ article.description }}</h1>
@@ -83,7 +83,7 @@
                         <img id="img" src="{{this.postimage}}" alt="">
                     </div>
                     <div class="blogcontaint">
-                         <p class="blog-title truncate-title">{{this.title}}</p>
+                       <p class="blog-title truncate-title">{{this.headingtitle}}</p>
                         <div class="post-detail">
                             <p>{{formatDate this.createdAt}}</p>
                             <p>Posted by {{this.author.username}}</p>
@@ -103,7 +103,7 @@
             <a href="/{{this.urlTitle}}">
                 <div class="box" data-aos="slide-up">
                     <img id="imgk" src="{{this.postimage}}" alt="">
-                    <p>{{this.title}}</p>
+                    <p class="blog-title truncate-title">{{this.headingtitle}}</p>
                     <div class="post-detail">
                         <p>{{formatDate this.createdAt}}</p>
                         <p>Posted by {{this.author.username}}</p>
