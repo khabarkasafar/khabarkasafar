@@ -72,7 +72,7 @@
             <div class="item" style="background-image: url('{{this.postimage}}'); background-size: cover;">
                 <div class="item-title" data-aos="slide-up">
                    
-                        <p>{{this.title}}</p>
+                        <p class="blog-title truncate-title">{{this.headingtitle}}</p>
                    
                     <div class="post-detail">
                         <p>{{formatDate this.createdAt}}</p>
@@ -96,7 +96,7 @@
                     <img id="img" src="{{this.postimage}}" alt="">
                 </div>
                 <div class="blogcontaint">
-                    <p class="blog-title truncate-title">{{this.title}}</p>
+                  <p class="blog-title truncate-title">{{this.headingtitle}}</p>
 
                     <div class="post-detail">
                         <p>{{formatDate this.createdAt}}</p>
@@ -107,7 +107,7 @@
             </a>
             {{/each}}
         </div>
-       
+         <button id="load-more-btn">Load More</button>
       
     </section>
 
@@ -118,7 +118,7 @@
              <a href="/{{this.urlTitle}}">
             <div class="box" >
                 <img id="imgk" src="{{this.postimage}}" alt="">
-                <p>{{this.title}}</p>
+                <p class="blog-title truncate-title">{{this.headingtitle}}</p>
                 <div class="post-detail">
                     <p>{{formatDate this.createdAt}}</p>
                     <p>Posted by {{this.author.username}}</p>
