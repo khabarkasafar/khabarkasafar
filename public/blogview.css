@@ -149,12 +149,12 @@ section .blogpost .blogpost-image img {
 }
 
 section .blogpost .blogpost-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 1.5rem 0rem;
     width: 90%;
 }
 section .blogpost .blogpost-description{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     /* padding: 1rem 0rem; */
     width: 90%;
 
@@ -169,7 +169,7 @@ section .blogpost .blogpost-content {
     margin-top: 1.5rem;
 }
 
-section .blogpost .blogpost-content h1 {
+ section .blogpost .blogpost-content h1 {
     font-size: 4rem;
     margin-top: 1.5rem;
 } 
@@ -485,6 +485,17 @@ section .section-left .blog .blogcontaint {
         margin-top: 8.5rem;
       
      
+    }
+    section .blogpost .blogpost-title {
+        font-size: 2rem;
+        padding: 1.5rem 0rem;
+        width: 100%;
+    }
+    section .blogpost .blogpost-description{
+        font-size: 1.5rem;
+        /* padding: 1rem 0rem; */
+        width: 100%;
+    
     }
 
 }
