@@ -141,140 +141,6 @@ header .icons #menubars {
 
 }
 
-.options{
-    margin-top: 7rem;
-  
-    box-shadow: var(--box-shadow);
-
-}
-.options .options-option{
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-
-  
-  
-
-}
-.options .options-option a{
-    font-size: 1.5rem;
-    padding: 1rem;
-    color: var(--green);
-}
-
-section .blogpost {
-    width: 100%;
-}
-
-section .blogpost .blogpost-image {
-    width: 100%;
-    height: 40rem;
-    margin-top: 1.5rem;
-}
-
-section .blogpost .blogpost-image img {
-    height: 100%;
-    width: 60rem;
-}
-
-section .blogpost .blogpost-title {
-    font-size: 2.5rem;
-    padding: 1.5rem 0rem;
-    width: 90%;
-}
-section .blogpost .blogpost-description{
-    font-size: 1.5rem;
-    /* padding: 1rem 0rem; */
-    width: 90%;
-
-}
-
-section .blogpost .blogpost-detail {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-}
-
-section .blogpost .blogpost-content {
-    margin-top: 1.5rem;
-}
-
- section .blogpost .blogpost-content h1 {
-    font-size: 4rem;
-} 
-section .blogpost .blogpost-content h2 {
-    font-size: 3rem;
-} 
-section .blogpost .blogpost-content h3 {
-    font-size: 2rem;
-} 
-section .blogpost .blogpost-content h4 {
-    font-size: 1.5rem;
-} 
-section .blogpost .blogpost-content a {
-    color: var(--green);
-} 
-section .blogpost .blogpost-content p{
-    font-size: 2rem;
-}
-
-
-
-section .blogpost .blogpost-interaction i {
-    font-size: 2rem;
-    padding: 2rem 0rem;
-    cursor: pointer;
-
-}
-
-section .blogpost .interactions-comments {
-    font-size: 2rem;
-    padding: 0.6rem 0rem;
-
-}
-
-section .like-btn {
-    font-size: 2rem;
-    background-color: #fff;
-}
-
-section .blogpost .blogpost-interaction span {
-    font-size: 1.7rem;
-    padding-left: 1rem;
-}
-
-section .blogpost .comment-form {
-    display: flex;
-    margin-top: 1rem;
-}
-
-section .blogpost .comment-form .comment-profile {
-    font-size: 3rem;
-    border-radius: 50%;
-
-}
-
-section .blogpost .user-comment .comment-profile {
-    font-size: 3rem;
-    border-radius: 50%;
-
-}
-
-section .blogpost .comment-form form {
-    padding: 0rem 1rem;
-}
-
-section .blogpost .comment-form form input {
-    font-size: 1rem;
-    padding: 1rem;
-    border: 0.1rem solid black;
-    border-radius: 1rem;
-
-}
-
-#share {
-    padding-left: 2rem;
-}
-
 footer {
     background-color: black;
     color: #fff;
@@ -319,31 +185,7 @@ footer .footer-1 .follow-us #twitter {
     padding-left: 1rem;
 }
 
-#commentpostbutton {
-    font-size: 2rem;
-    background-color: #fff;
-    cursor: pointer;
-}
 
-.user-comment {
-    display: flex;
-    margin-top: 2rem;
-    align-items: center;
-}
-
-.user-commentdetail {
-    margin-left: 1rem;
-    width: 20%;
-}
-
-.user-commentcontent {
-    margin-top: 0.6rem;
-    font-size: 1.5rem;
-}
-
-#comment-view {
-    display: none;
-}
 
 section .section-left .blog {
     display: flex;
@@ -354,7 +196,7 @@ section .section-left .blog {
 }
 
 section .section-left .blog .blog-img {
-    width: 30%;
+    min-width: 40%;
     height: 18rem;
 }
 
@@ -540,13 +382,13 @@ section .section-left .blog .blogcontaint {
             <h1>pending articles</h1>
             {{#if pendingArticles.length}}
             {{#each pendingArticles}}
-            <a href="/post/{{this.urlTitle}}">
+            <a href="/{{this.urlTitle}}">
                 <div class="blog">
                     <div class="blog-img">
                         <img id="img" src="{{this.postimage}}" alt="">
                     </div>
                     <div class="blogcontaint">
-                        <p>{{this.title}}</p>
+                        <p>{{this.headingtitle}}</p>
                         <div class="post-detail">
                             <p>{{formatDate this.createdAt}}</p>
                             <p>Posted by {{this.author.username}}</p>
