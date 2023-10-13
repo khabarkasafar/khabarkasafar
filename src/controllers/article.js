@@ -31,7 +31,7 @@ router.post("/articlepost", checkAuth, async (req, res) => {
 
     const username = decodedToken.username;
     const user = await User.findOne({ username });
-
+console.log(user);
     if (!user) {
       return res.status(404).send("User not found.");
     }
@@ -52,6 +52,7 @@ router.post("/articlepost", checkAuth, async (req, res) => {
     });
 
     await newArticle.save();
+    console.log(newArticle);
     user.articles.push(newArticle._id);
     await user.save();
 
