@@ -1,6 +1,7 @@
 const express = require("express");
 const cloudinary = require("cloudinary").v2;
 const app = express();
+const cors = require('cors');
 const fileupload = require("express-fileupload");
 app.use(fileupload({ useTempFiles: true }));
 // const session = require("express-session");
@@ -16,6 +17,10 @@ const bcrypt = require('bcrypt');
 const User = require("./model/userModel");
 const Article = require("./model/articlePost");
 const Comment = require("./model/commentModel");
+
+app.use(cors({
+  origin: 'http://127.0.0.1:3000', // Replace with your allowed origin
+}));
 
 // const SecretKey = require("./config/crypto");
 
