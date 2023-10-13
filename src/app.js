@@ -19,7 +19,7 @@ const Article = require("./model/articlePost");
 const Comment = require("./model/commentModel");
 
 app.use(cors({
-  origin: 'http://127.0.0.1:3000', // Replace with your allowed origin
+  origin: 'https://sanskritisarita.vercel.app', // Replace with your allowed origin
 }));
 
 // const SecretKey = require("./config/crypto");
