@@ -3,16 +3,19 @@ const mongoose = require("mongoose");
 const uri =
   "mongodb+srv://saurabhkumar:rVKACHYbuzYy7VMs@cluster0.n4zogin.mongodb.net/blogginggg?retryWrites=true&w=majority";
 
-mongoose.set("strictQuery", false);
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-  console.log("Connected to MongoDB...");
-});
+const db = async () => {
+  mongoose.set('strictQuery', false);
+  try {
+    await mongoose.connect(uri);
+    const dbs = mongoose.connection;
+    if (dbs) {
+      console.log('connected to mongodb database...');
+    } else {
+      console.log('error in  conecting to the uri');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 module.exports = db;
